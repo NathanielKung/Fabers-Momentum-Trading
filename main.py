@@ -1,67 +1,3 @@
-# # # import yfinance as yf
-# # # import datetime
-# # # import stock_info module from yahoo_fin
-# from datetime import datetime, timedelta
-# from yahoo_fin import stock_info as si
-# import yfinance as yf
-
-
-
-# def MyFunction(ticker):
-# 	# Set the start and end dates
-# 	start_date = (datetime.now() - timedelta(days=91)).strftime('%Y-%m-%d')
-# 	end_date = datetime.now().strftime('%Y-%m-%d')
-	
-# 	# Get the historical stock prices
-# 	ticker_symbol = ticker # Replace with your desired ticker symbol
-# 	stock_data = si.get_data(ticker_symbol, start_date=start_date, end_date=end_date)
-
-# 	# Compute Current Price
-# 	current_price = si.get_live_price(ticker_symbol)
-	
-# 	# Compute 3 Month Ago Price
-# 	closing_prices = stock_data['close']
-# 	three_month_ago_price = closing_prices.iloc[0]
-
-# 	# Compute the 3 Month % Change
-# 	three_month_precentage_change = (current_price-three_month_ago_price)/three_month_ago_price*100
-	
-# 	# Compute the 10 Month Moving Average
-# 	start_date = datetime.now() - timedelta(days=304.167)
-# 	end_date = datetime.now()
-	
-# 	data = yf.download(ticker_symbol, start=start_date, end=end_date)
-# 	avg_price = data["Close"].mean()
-	 
-# 	# Print the result
-# 	# print(ticker_symbol, "Current Price: ", current_price)
-# 	# print(ticker_symbol, "10 Month Moving Average: ", avg_price)
-# 	# print(ticker_symbol, "3 Month Ago Price: ", three_month_ago_price)
-# 	# print(ticker_symbol, "3 Month % Change: ", three_month_precentage_change,"%")
-# 	return three_month_precentage_change
-
-# # print("SPY: ",MyFunction("SPY"))
-# # print("XLK: ",MyFunction("XLK"))
-# # print("XLC: ",MyFunction("XLC"))
-# # print("XLP: ",MyFunction("XLP"))
-# # print("XLI: ",MyFunction("XLI"))
-# # print("XLE: ",MyFunction("XLE"))
-# # print("XLB: ",MyFunction("XLB"))
-# # print("XLV: ",MyFunction("XLV"))
-# # print("XLU: ",MyFunction("XLU"))
-# # print("XLY: ",MyFunction("XLY"))
-# # print("XLF: ",MyFunction("XLF"))
-# # print("XLRE: ",MyFunction("XLRE"))
-
-# data = [MyFunction("XLK"), MyFunction("XLC"), MyFunction("XLP"), MyFunction("XLI"), MyFunction("XLE"), MyFunction("XLB"), MyFunction("XLV"), MyFunction("XLU"), MyFunction("XLY"), MyFunction("XLF"), MyFunction("XLRE")]
-# sorted_data = sorted(data, reverse=True)  # sort data from highest to lowest
-# top_3 = sorted_data[:3]  # get the top 3
-
-# print(top_3)
-# # import yfinance as yf
-# # import datetime
-# # import stock_info module from yahoo_fin
-
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -179,6 +115,7 @@ df = pd.DataFrame(data)
 
 print(df)
 
+### Integrating the data into automated email system ###
 
 # import smtplib
 # from email.MIMEMultipart import MIMEMultipart
